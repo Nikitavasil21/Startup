@@ -1,16 +1,11 @@
-#container {
-	margin: 48px auto;
-	width: 960px;
-	&_section {
-	clear: both;
-	}
-	&_header {
-	margin-bottom: 46px;
-	}
-	&_header{
-	&_h1 {
-	float: left;
-	margin: 0;
-	}
-	}
-}
+container
+margin: 48px auto;
+width: 960px;
+section
+clear: both;
+header
+margin-bottom: 46px;
+header
+h1
+float: left;
+margin: 0;

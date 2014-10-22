@@ -7,16 +7,15 @@
 <%= csrf_meta_tags %>
 </head>
 <body>
-<section id="container">
-<header class="clearfix">
-<h1>Флэшкарточкер</h1>
-<ul class="navigation-links">
- <li><a href="#">Все карточки</a></li>
-<li><a href="#">Добавьте карточку</a href="#"></a></li>
-</ul>
-</header>
+  <section id="container">
+    <header class="clearfix">
+      <h1>Флэшкарточкер</h1>
+      <ul class="navigation-links">
+        <li><a href="#">Все карточки</a></li>
+        <li><a href="#">Добавьте карточку</a href="#"></a></li>
+      </ul>
+    </header>
+    <%= yield %>
 
-<%= yield %>
-
-</body>
+    </body>
 </html>
