@@ -9,10 +9,10 @@
 <body>
   <section id="container">
     <header class="clearfix">
-      <h1>Флэшкарточкер</h1>
-      <ul class="navigation-links">
-        <li><%= link_to_unless_current("Все карточки", { action: "index", controller:"cards_controller"}) %></li>
-        <li><a href="#">Добавьте карточку</a href="#"></a></li>
+     <h1>Флэшкарточкер</h1>
+       <ul class="navigation-links">
+        <li><%= link_to 'Все карточки', @cards %> </li>
+        <li><a href="#">Добавьте карточку</a></li>
       </ul>
     </header>
 
