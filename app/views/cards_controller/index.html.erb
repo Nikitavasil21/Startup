@@ -1,0 +1,15 @@
+<h1>Listing articles<h1>
+ <table>
+  <tr>
+   <th>original</th>
+   <th>translated</th>
+   <th>review</th>
+
+   <% @cards.each do |card| %>
+   <tr>
+    <td><%= card.original %></td>
+    <td><%= card.translated %></td>
+    <td><%= card.review %></td>
+   </tr>
+   <% end %>
+  </table>

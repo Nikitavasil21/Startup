@@ -11,7 +11,7 @@
     <header class="clearfix">
       <h1>Флэшкарточкер</h1>
       <ul class="navigation-links">
-        <li><a href="#">Все карточки</a></li>
+        <li><%= link_to_unless_current("Все карточки", { action: "index", controller:"cards_controller"}) %></li>
         <li><a href="#">Добавьте карточку</a href="#"></a></li>
       </ul>
     </header>
