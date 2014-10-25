@@ -1,17 +1,17 @@
 <h1>Cards</h1>
-  <% @cards.each do |card| %>
-    <div id="main">
-      <div id="origin">
-        <%= card.original %>
-      </div>
-      <div id="translated">
-        <%= card.translated %>
-      </div>
-      <div id="review">
-        <%= card.review_date %>
-      </div>
-      <div id="bottom">
-        <%= link_to 'На главную' , root_path %>
-      </div>
+<% @cards.each do |card| %>
+  <div id="main">
+    <div id="origin">
+      <%= card.original %>
     </div>
-  <% end %>
+    <div id="translated">
+      <%= card.translated %>
+    </div>
+    <div id="review">
+      <%= card.review_date %>
+    </div>
+    <div id="bottom">
+      <%= link_to 'На главную' , root_path %>
+    </div>
+  </div>
+<% end %>
