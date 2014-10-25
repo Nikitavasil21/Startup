@@ -1,13 +1,13 @@
 <h1>Cards</h1>
   <% @cards.each do |card| %>
     <div style="border:1px solid red; width:400px; height:350px; margin:auto;">
-      <div style="border:1px solid green; width:398px; height:100px;">
+      <div id="origin" style="border:1px solid green; width:398px; height:100px;">
         <%= card.original %>
       </div>
-        <div style="border:1px solid grey; width:198px; height:120px; float:left;">
+        <div id="translated" style="border:1px solid grey; width:198px; height:120px; float:left;">
           <%= card.translated %>
         </div>
-          <div style="border:1px solid blue; width:198px; height:120px; float:left;">
+          <div id="review" style="border:1px solid blue; width:198px; height:120px; float:left;">
             <%= card.review %>
           </div>
             <div style="border:1px solid green; width:398px; height:100px; clear:both;">
