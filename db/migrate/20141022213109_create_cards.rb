@@ -3,7 +3,7 @@ class CreateCards < ActiveRecord::Migration
     create_table :cards do |t|
       t.text :original
       t.text :translated
-      t.datetime :review
+      t.datetime :review_date
 
       t.timestamps
     end
