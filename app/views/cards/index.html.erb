@@ -4,14 +4,14 @@
       <div id="origin">
         <%= card.original %>
       </div>
-        <div id="translated">
-          <%= card.translated %>
-        </div>
-          <div id="review">
-            <%= card.review_date %>
-          </div>
-            <div id="bottom">
-            <%= link_to_unless_current("На главную", { action: "index", controller: "home"}) %>
-            </div>
-              </div>
-                <% end %>
+      <div id="translated">
+        <%= card.translated %>
+      </div>
+      <div id="review">
+        <%= card.review_date %>
+      </div>
+      <div id="bottom">
+        <%= link_to 'На главную' , root_path %>
+      </div>
+    </div>
+  <% end %>
