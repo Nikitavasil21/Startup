@@ -1,3 +1,33 @@
+#main {
+  border: 1px solid red;
+  width: 400px;
+  height: 350px;
+  margin: auto;
+}
+
+#translated {
+  border: 1px solid grey;
+  width: 198px;
+  height: 120px;
+  float: left;
+}
+
 #origin {
-  color: blue;
+  border: 1px solid green;
+  width: 398px;
+  height: 100px;
+}
+
+#review {
+  border: 1px solid blue;
+  width: 198px;
+  height: 120px;
+  float: left;
+}
+
+#bottom {
+  border: 1px solid green;
+  width: 398px;
+  height: 100px;
+  clear: both;
 }

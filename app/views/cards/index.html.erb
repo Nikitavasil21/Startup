@@ -1,16 +1,16 @@
 <h1>Cards</h1>
   <% @cards.each do |card| %>
-    <div style="border:1px solid red; width:400px; height:350px; margin:auto;">
-      <div id="origin" style="border:1px solid green; width:398px; height:100px;">
+    <div id="main">
+      <div id="origin">
         <%= card.original %>
       </div>
-        <div id="translated" style="border:1px solid grey; width:198px; height:120px; float:left;">
+        <div id="translated">
           <%= card.translated %>
         </div>
-          <div id="review" style="border:1px solid blue; width:198px; height:120px; float:left;">
+          <div id="review">
             <%= card.review %>
           </div>
-            <div style="border:1px solid green; width:398px; height:100px; clear:both;">
+            <div id="bottom">
             <%= link_to_unless_current("На главную", { action: "index", controller: "home"}) %>
             </div>
               </div>
