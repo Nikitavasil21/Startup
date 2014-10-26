@@ -22,14 +22,15 @@ class CardsController < ApplicationController
   end
 
   def update
-    @card = Card.new(params[:id])
-
+    @card = Card.find(params[:id])
+    if
     @card.update
-      redirect_to cards_path
+      redirect_to @cards
   end
+end
   def destroy
     @card = Card.find(params[:id])
-    @card.destroy
+    @cards.destroy
     
     redirect_to cards_path
   end   
