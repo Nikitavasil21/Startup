@@ -1,0 +1,13 @@
+<h1>Редактировать карточку</h1>
+<%= form_for :cards, url: cards_path(@cards), method: :patch do |f| %>
+<p>
+  <%= f.text_field :text %>
+  <%= f.text_field :text %>
+  <%= f.text_field :datetime %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
+
+<%= link_to 'Назад', cards_path %>
