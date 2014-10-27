@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require views/layouts/application.html.erb
