@@ -1,0 +1,13 @@
+<h1>Редактировать карточку</h1>
+<%= form_for @card do |f|  %>
+  <p>
+    <%= f.text_field :original %>
+    <%= f.text_field :translated %>
+    <%= f.text_field :review_date %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Назад', cards_path %>

@@ -1,0 +1,22 @@
+<h1>Cards</h1>
+<%= link_to "Новая карточка", new_card_path %>
+<% @cards.each do |card| %>
+  <div id="main">
+    <div id="origin">
+      <%= card.original %>  
+    </div>
+    <div id="translated">
+      <%= card.translated %>
+    </div>
+    <div id="review">
+      <%= card.review_date %>
+    </div>
+    <div id="bottom">
+      <%= link_to 'На главную' , root_path %>
+      <%= link_to 'Удалить' , card_path(card), method: :delete,
+           data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Редактировать', edit_card_path(card) %>
+
+    </div>
+  </div>
+<% end %>
