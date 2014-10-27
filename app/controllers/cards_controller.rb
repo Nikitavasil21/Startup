@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   def index
-   @cards = Card.all
+    @cards = Card.all
   end
 
   def destroy
