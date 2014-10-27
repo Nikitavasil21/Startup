@@ -13,7 +13,7 @@
     </div>
     <div id="bottom">
       <%= link_to 'На главную' , root_path %>
-      <%= link_to 'Удалить' , cards_path(card), method: :delete,
+      <%= link_to 'Удалить' , card_path(card), method: :delete,
            data: { confirm: 'Are you sure?' } %>
       <%= link_to 'Редактировать', edit_card_path(card) %>
 
