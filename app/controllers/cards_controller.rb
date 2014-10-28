@@ -34,7 +34,7 @@ class CardsController < ApplicationController
       @card = Card.find(params[:id])
     end
 
-  def card_params
-    params.require[:card].permit(:original, :translated, :review_date) if params[:card]
-  end
+    def card_params
+      params.require[:card].permit(:original, :translated, :review_date) if params[:card]
+    end
 end
