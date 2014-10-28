@@ -28,14 +28,13 @@ class CardsController < ApplicationController
     redirect_to cards_path
   end
 
-  protected
-    def card_find
+  private
+
+    def find_card
       @card = Card.find(params[:id])
     end
 
-  private
-
   def card_params
-    params.require(:card).permit(:original, :translated, :review_date) if params[:card]
+    params.require[:card].permit(:original, :translated, :review_date) if params[:card]
   end
 end
