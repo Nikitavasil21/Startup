@@ -1,15 +1,13 @@
 <%= simple_form_for :card, url: cards_path do |f| %>
   <h1>Создать новую карточку</h1>
   <p>
-    <%= f.label :original %><br>
-    <%= f.input_field :original %><br>
+    
+    <%= f.input :original, label: 'Введите оригинал слова ' %><br>
   </p>
   <p>
-    <%= f.label :translated %>
-    <%= f.input_field :translated %>
+    <%= f.input :translated, label: 'Введите перевод слова' %>
   </p>
   <p>
-    <%= f.label :review_date %>
     <%= f.datetime_select :review_date %>
   </p>
 
