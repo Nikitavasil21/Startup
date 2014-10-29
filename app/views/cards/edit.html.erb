@@ -1,7 +1,7 @@
 <h1>Редактировать карточку</h1>
-<%= simple_form_for @card do |f|  %>
+<%= simple_form_for @card do |f| %>
   <p>
-    <%= f.input :original, label:'Оригинал' %>
+    <%= f.input :original, label: 'Оригинал' %>
     <%= f.input :translated, label: 'Перевод' %>
     <%= f.datetime_select :review_date,label:'Дата обновления' %>
   </p>
