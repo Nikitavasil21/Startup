@@ -19,7 +19,7 @@ class CardsController < ApplicationController
   end
 
   def new
-    @card = Card.new(card_params)
+    @card = Card.new
   end
   
   def create
@@ -35,6 +35,6 @@ class CardsController < ApplicationController
     end
 
     def card_params
-      params.require(:card).permit(:original, :translated, :review_date) if params[:card]
+      params.require(:card).permit(:original, :translated, :review_date)
     end
 end
