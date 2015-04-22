@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 require 'nokogiri'
 require 'open-uri'
 doc = Nokogiri::HTML(open("http://blogs.transparent.com/danish/2013/10/31/100-most-common-written-words-in-danish/"))
