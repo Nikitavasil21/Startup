@@ -1,6 +1,9 @@
 class CardsController < ApplicationController
   before_action :find_card, only: [:show, :edit, :update, :destroy]
 
+  require 'nokogiri'
+  require 'open-uri'
+
   def index
     @cards = Card.all
   end
