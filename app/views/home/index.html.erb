@@ -1,5 +1,21 @@
 <section>
-      <p style="font-size: 22px;">
-        Первый в мире удобный менеджер флеш-карточек. Именно так.
-      </p>
-    </section>
+  <p style="font-size: 22px;">
+    Первый в мире удобный менеджер флеш-карточек. Именно так.
+  </p>
+</section>
+<body>
+  <% if @card %>
+    <p>
+      <%= label_tag :original, "Оригинал" %>
+      <%= form_tag  home_path, method: :put do %>
+      <%= label_tag :translated, "Введите перевод" %>
+      <%= text_field_tag :translation %>
+      <%= hidden_field_tag :review_date %>
+      <%= submit_tag "Проверка" %>
+    </p>
+    <% end %>
+     lol
+  <% end %>
+чсс
+</body>
+
