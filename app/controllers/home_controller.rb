@@ -4,8 +4,8 @@ class HomeController < ApplicationController
   end
 
   def review_card
-    @card = Card.find(params_task[:id])
-    if @card.check_translation(params_task[:user_translation])
+    @card = Card.find(translation_params[:id])
+    if @card.check_translation(translation_params[:user_translation])
       flash.now[:success] = "Fuck yeah!"
     else
       flash.now[:error] = "Try again,bro!"
@@ -13,7 +13,7 @@ class HomeController < ApplicationController
     redirect_to root_path
   end
   private
-    def params_task
+    def translation_params
       params.permit(:id, :user_translation)
     end
 end  
