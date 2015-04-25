@@ -1,5 +1,5 @@
 Startup::Application.routes.draw do
   root :to => "home#index"
   resources :cards
-  post "home" => "home#task"
+  put "home" => "home#review_card"
 end

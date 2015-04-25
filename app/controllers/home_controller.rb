@@ -1,15 +1,19 @@
 class HomeController < ApplicationController
   def index
-    @card = Card.task_cards
+    @card = Card.for_review.first
   end
 
-  def task
-    user_translation = params[:user_translation]
-    if @card.task_checking
-      flash[:notice] = "Fuck yeah!"
+  def review_card
+    @card = Card.find(translation_params[:id])
+    if @card.check_translation(translation_params[:user_translation])
+      flash.now[:success] = "Fuck yeah!"
     else
-      flash[:error] = "Try again,bro!"
+      flash.now[:error] = "Try again,bro!"
     end
     redirect_to root_path
   end
+  private
+    def translation_params
+      params.permit(:id, :user_translation)
+    end
 end  

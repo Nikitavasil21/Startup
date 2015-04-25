@@ -1,13 +1,15 @@
 class Card < ActiveRecord::Base
+  validates :original, :translated, :review_date, presence: true
 
-
-  scope :task_cards, -> {
+  scope :for_review, -> {
     where("review_date <=?", DateTime.now).order("RANDOM()")
   }
 
-  def self.task_checking(user_translation)
-    original.mb_chars.downcase == user_translation.mb_chars.downcase
+  def check_translation(user_translation)
+    if original.mb_chars.downcase == user_translation.mb_chars.downcase
+      update_attributes(review_date: Date.today + 3.days)
+    else
+      false
+    end
   end  
-
- 
 end
