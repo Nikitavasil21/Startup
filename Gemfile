@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-%w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
-  gem lib, :git => "git://github.com/rspec/#{lib}.git", :branch => 'master'
-end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
@@ -12,7 +9,10 @@ gem 'pg'
 
 gem 'simple_form'
 
+gem 'rspec-rails'
+
 gem 'bootstrap-sass'
+
 gem 'autoprefixer-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
