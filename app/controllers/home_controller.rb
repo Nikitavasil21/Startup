@@ -6,9 +6,9 @@ class HomeController < ApplicationController
   def review_card
     @card = Card.find(translation_params[:id])
     if @card.check_translation(translation_params[:user_translation])
-      flash.now[:success] = "Fuck yeah!"
+      flash[:success] = "Fuck yeah!"
     else
-      flash.now[:error] = "Try again,bro!"
+      flash[:error] = "Try again,bro!"
     end
     redirect_to root_path
   end
