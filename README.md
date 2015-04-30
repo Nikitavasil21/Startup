@@ -1,0 +1,1 @@
+https://travis-ci.org/Nikitavasil21/Startup.svg?branch=logicy
