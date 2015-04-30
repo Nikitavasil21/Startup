@@ -9,11 +9,11 @@
   <% if @card %>
     <p>
       <%= form_tag home_path, method: :put do %>
-      <%= @card.translated %>
-      <%= label_tag  "Введите перевод" %>
-      <%= text_field_tag :user_translation %>
-      <%= hidden_field_tag :id, @card.id %>
-      <%= submit_tag "Проверка" %>
+        <%= @card.translated %>
+        <%= label_tag  "Введите перевод" %>
+        <%= text_field_tag :user_translation %>
+        <%= hidden_field_tag :id, @card.id %>
+        <%= submit_tag "Проверка" %>
     </p>
   <% end %>
   <% else %>

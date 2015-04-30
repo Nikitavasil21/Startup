@@ -10,7 +10,7 @@ class HomeController < ApplicationController
     else
       flash[:error] = "Try again,bro!"
     end
-    
+    redirect_to root_path
   end
   private
     def translation_params
