@@ -5773,3 +5773,88 @@ Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.9ms)
   [1m[36mSQL (0.2ms)[0m  [1mUPDATE "cards" SET "review_date" = $1, "updated_at" = $2 WHERE "cards"."id" = $3[0m  [["review_date", "2015-05-04 00:00:00.000000"], ["updated_at", "2015-05-01 10:19:00.103793"], ["id", 24]]
   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (17.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (36.5ms)[0m  INSERT INTO "cards" ("original", "translated", "review_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["original", "Hoogie"], ["translated", "Govnocode"], ["review_date", "2015-04-03 00:00:00.000000"], ["created_at", "2015-05-01 15:33:20.247638"], ["updated_at", "2015-05-01 15:33:20.247638"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "cards" SET "review_date" = $1, "updated_at" = $2 WHERE "cards"."id" = $3[0m  [["review_date", "2015-04-30 00:00:00.000000"], ["updated_at", "2015-05-01 15:33:20.307496"], ["id", 25]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-05-01 18:33:20 +0300
+Processing by HomeController#index as HTML
+  [1m[36mCard Load (1.7ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (review_date <='2015-05-01 15:33:20.383115')  ORDER BY RANDOM() LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 231ms (Views: 210.4ms | ActiveRecord: 1.7ms)
+Started PUT "/review" for 127.0.0.1 at 2015-05-01 18:33:20 +0300
+Processing by HomeController#review_card as HTML
+  Parameters: {"utf8"=>"✓", "user_translation"=>"Hoogie", "id"=>"25", "commit"=>"Проверка"}
+Unpermitted parameters: utf8, _method, commit
+  [1m[35mCard Load (0.6ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 25]]
+Unpermitted parameters: utf8, _method, commit
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "cards" SET "review_date" = $1, "updated_at" = $2 WHERE "cards"."id" = $3  [["review_date", "2015-05-04 00:00:00.000000"], ["updated_at", "2015-05-01 15:33:20.781981"], ["id", 25]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 154ms (ActiveRecord: 1.9ms)
+Started GET "/" for 127.0.0.1 at 2015-05-01 18:33:20 +0300
+Processing by HomeController#index as HTML
+  [1m[35mCard Load (0.8ms)[0m  SELECT  "cards".* FROM "cards" WHERE (review_date <='2015-05-01 15:33:20.787323')  ORDER BY RANDOM() LIMIT 1
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "cards" ("original", "translated", "review_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["original", "Hoogie"], ["translated", "Govnocode"], ["review_date", "2015-04-03 00:00:00.000000"], ["created_at", "2015-05-01 15:33:20.794904"], ["updated_at", "2015-05-01 15:33:20.794904"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "cards" SET "review_date" = $1, "updated_at" = $2 WHERE "cards"."id" = $3[0m  [["review_date", "2015-04-30 00:00:00.000000"], ["updated_at", "2015-05-01 15:33:20.797196"], ["id", 26]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-05-01 18:33:20 +0300
+Processing by HomeController#index as HTML
+  [1m[36mCard Load (0.7ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (review_date <='2015-05-01 15:33:20.799899')  ORDER BY RANDOM() LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+Started PUT "/review" for 127.0.0.1 at 2015-05-01 18:33:20 +0300
+Processing by HomeController#review_card as HTML
+  Parameters: {"utf8"=>"✓", "user_translation"=>"Copro Code", "id"=>"26", "commit"=>"Проверка"}
+Unpermitted parameters: utf8, _method, commit
+  [1m[35mCard Load (0.6ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 26]]
+Unpermitted parameters: utf8, _method, commit
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-05-01 18:33:20 +0300
+Processing by HomeController#index as HTML
+  [1m[36mCard Load (0.7ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (review_date <='2015-05-01 15:33:20.809532')  ORDER BY RANDOM() LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "cards" ("original", "translated", "review_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["original", "cherry"], ["translated", "Вишня"], ["review_date", "2015-04-10 00:00:00.000000"], ["created_at", "2015-05-01 15:33:20.816689"], ["updated_at", "2015-05-01 15:33:20.816689"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "cards" SET "review_date" = $1, "updated_at" = $2 WHERE "cards"."id" = $3  [["review_date", "2015-05-04 00:00:00.000000"], ["updated_at", "2015-05-01 15:33:20.819041"], ["id", 27]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "cards" ("original", "translated", "review_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["original", "Hoogie code"], ["translated", "Говнокод"], ["review_date", "2015-04-10 00:00:00.000000"], ["created_at", "2015-05-01 15:33:20.841893"], ["updated_at", "2015-05-01 15:33:20.841893"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("original", "translated", "review_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["original", "Hoogie code"], ["translated", "Говнокод"], ["review_date", "2015-04-28 00:00:00.000000"], ["created_at", "2015-05-01 15:33:20.845617"], ["updated_at", "2015-05-01 15:33:20.845617"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "cards" SET "review_date" = $1, "updated_at" = $2 WHERE "cards"."id" = $3[0m  [["review_date", "2015-05-04 00:00:00.000000"], ["updated_at", "2015-05-01 15:33:20.847259"], ["id", 29]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "cards" ("original", "translated", "review_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["original", "Hoogie code"], ["translated", "Говнокод"], ["review_date", "2015-04-28 00:00:00.000000"], ["created_at", "2015-05-01 15:33:20.862711"], ["updated_at", "2015-05-01 15:33:20.862711"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "cards" SET "review_date" = $1, "updated_at" = $2 WHERE "cards"."id" = $3[0m  [["review_date", "2015-05-04 00:00:00.000000"], ["updated_at", "2015-05-01 15:33:20.865765"], ["id", 30]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
