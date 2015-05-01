@@ -3,8 +3,5 @@ rvm:
   - 2.0.0-p576
 
 before_script:
-<<<<<<< HEAD
+
   - psql -c 'create database travis_ci_test;' -U postgres
-=======
-  - psql -c 'create database travis_ci_test;' -U postgres
->>>>>>> 6f541cab4b00dabb3ff79eceeef1120ce28fd527
