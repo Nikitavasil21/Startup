@@ -1,1 +1,1 @@
-https://travis-ci.org/Nikitavasil21/Startup.svg?branch=logicy
+[![Build Status](https://travis-ci.org/Nikitavasil21/Startup.svg?branch=logicy)](https://travis-ci.org/Nikitavasil21/Startup)
