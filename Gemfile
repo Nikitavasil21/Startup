@@ -42,6 +42,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test do
+  gem 'capybara'
+
+  gem 'factory_girl_rails'
+end
+
 
 
 # Use ActiveModel has_secure_password

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141022213109) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cards", force: true do |t|
+  create_table "cards", force: :cascade do |t|
     t.text     "original"
     t.text     "translated"
     t.datetime "review_date"
