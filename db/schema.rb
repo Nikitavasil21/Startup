@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150501202251) do
     t.string   "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    #cоздал модель
   end
 
 end
