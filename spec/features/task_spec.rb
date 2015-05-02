@@ -3,7 +3,6 @@ require "rails_helper"
 describe "Check the verify of the form" do
 
   let!(:card) { FactoryGirl.create (:card) }
-
   before do
     card.update_attribute(:review_date, Date.today - 1.day)
     visit root_path
