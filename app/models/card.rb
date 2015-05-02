@@ -1,7 +1,6 @@
 class Card < ActiveRecord::Base
   belongs_to :user
   validates :original, :translated, :review_date, :user_id, presence: true
-  #больше ассоциаций
   scope :for_review, -> {
     where("review_date <=?", DateTime.now).order("RANDOM()")
   }
