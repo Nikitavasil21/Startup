@@ -4,5 +4,6 @@ FactoryGirl.define do
     original "Hoogie"
     translated "Govnocode"
     review_date "2015-04-03 00:00:00 UTC"
+    user_id 1
   end
 end
