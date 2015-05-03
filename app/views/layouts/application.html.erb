@@ -7,6 +7,18 @@
 <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="nav">
+    <% if current_user %>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+      <%= link_to "Logout", :logout, method: :post %>
+    <% else %>
+      <%= link_to "Register", new_user_path %> |
+      <%= link_to "Login", :login %>
+    <% end %>
+  <div>
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+  </div>
   <nav class ="navbar navbar-default">
     <p><%= flash[:success] %></p>
     <p style = "color: red"><%= flash[:error] %></p>
@@ -16,6 +28,7 @@
        <ul class="navigation-links">
         <li><%= link_to 'Все карточки', cards_path %> </li>
         <li><a href="#">Добавьте карточку</a></li>
+        <li><%= link_to 'Создать пользователя' ,users_path %>
       </ul>
     </header>
 

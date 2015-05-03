@@ -1,8 +1,6 @@
 class CardsController < ApplicationController
   before_action :find_card, only: [:show, :edit, :update, :destroy]
-
-  require 'nokogiri'
-  require 'open-uri'
+  before_filter :require_login
 
   def index
     @cards = Card.all
@@ -26,7 +24,7 @@ class CardsController < ApplicationController
   end
   
   def create
-    @card = Card.new(card_params)
+    @card = Card.new(card_params.merge(user_id: current_user.id))
     @card.save
     redirect_to cards_path
   end
@@ -38,6 +36,6 @@ class CardsController < ApplicationController
     end
 
     def card_params
-      params.require(:card).permit(:original, :translated, :review_date)
+      params.require(:card).permit(:original, :translated, :review_date, :user_id)
     end
 end
