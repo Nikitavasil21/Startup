@@ -9,7 +9,7 @@
 <body>
   <div id="nav">
     <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+      <%= link_to "Edit Profile", profile_path %>
       <%= link_to "Logout", :logout, method: :post %>
     <% else %>
       <%= link_to "Register", new_user_path %> |
@@ -26,9 +26,9 @@
     <header class="clearfix">
      <h1>Флэшкарточкер</h1>
        <ul class="navigation-links">
-        <li><%= link_to 'Все карточки', cards_path %> </li>
+        <li><%= link_to 'All Cards', cards_path %> </li>
         <li><a href="#">Добавьте карточку</a></li>
-        <li><%= link_to 'Создать пользователя' ,users_path %>
+        <li><%= link_to 'Create user' ,users_path %>
       </ul>
     </header>
 

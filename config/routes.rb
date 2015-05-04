@@ -1,4 +1,8 @@
 Startup::Application.routes.draw do
+  get 'profile/edit'
+  get 'profile' => 'profile#edit'
+  
+
   resources :user_sessions
   resources :users
 

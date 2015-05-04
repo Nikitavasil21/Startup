@@ -6,7 +6,7 @@ describe "Check the verify of the form" do
   let!(:card) { FactoryGirl.create (:card) }
   let!(:user) { FactoryGirl.create (:user) }
   before (:each) do
-    login("dodge@bk.ru","1234567890")
+    login("dodge@bk.ru", "1234567890")
     card.update_attribute(:review_date, Date.today - 1.day)
     visit root_path
   end

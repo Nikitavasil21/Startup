@@ -18,7 +18,7 @@ describe Card do
     end
   
     it "Cheking the changing of review_date" do
-      expect { card.check_translation("Hoogie code") }.to change { card.review_date }.from("2015-04-28 00:00:00 UTC").to("2015-05-6 00:00:00 UTC")
+      expect { card.check_translation("Hoogie code") }.to change { card.review_date }.from("2015-04-28 00:00:00 UTC").to(Date.today + 3.days)
     end
   end 
 end
