@@ -1,13 +1,18 @@
 class ProfileController < ApplicationController
+
   def edit
   end
 
   def update
     if current_user.update_attributes(user_params)
-      flash[:notice] = "User was successfully update"
-      redirect_to edit_profile_path
+      redirect_to(profile_path, notice: "Update successfully")
     else
-      flash[:error] = "Something went wrong"
+      redirect_to(profile_path, error: "Something went wrong")
     end
   end
+
+  private
+    def user_params
+      params.require(:profile).permit(:email, :password, :password_confirmation)
+    end
 end

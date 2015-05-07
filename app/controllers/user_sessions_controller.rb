@@ -1,5 +1,6 @@
 class UserSessionsController < ApplicationController
   skip_before_action :require_login, except: [:destroy]
+
   def new
     @user = User.new
   end
@@ -8,8 +9,7 @@ class UserSessionsController < ApplicationController
     if @user = login(login_params[:email], login_params[:password])
       redirect_to(profile_path, notice: 'Login successful')
     else
-      flash.now[:alert] = "Try again,bro"
-      redirect_to user_sessions_part
+      redirect_to(root_path, error: 'Error')
     end
   end
 

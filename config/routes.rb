@@ -1,6 +1,7 @@
 Startup::Application.routes.draw do
-  get 'profile/edit'
+  
   get 'profile' => 'profile#edit'
+  patch 'profile' => 'profile#update'
   
 
   resources :user_sessions

@@ -8,11 +8,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if @user.save!
       auto_login(@user)
       redirect_to(profile_path, notice: 'User was successfully created')
     else
-      flash[:error] = "You must try again"
+      redirect_to(profile_path, error: 'You must try again')
     end
   end
 
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to(profile_path, notice: 'Profile updated')
     else
-      redirect_to(profile_path, notice: 'Error')
+      redirect_to(profile_path, error: 'Error')
     end
   end
 
