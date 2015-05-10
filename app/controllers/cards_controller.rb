@@ -3,7 +3,7 @@ class CardsController < ApplicationController
   before_action :require_login
 
   def index
-    @cards = Card.all
+    @cards = current_user.cards.all
   end
 
   def destroy
@@ -32,7 +32,7 @@ class CardsController < ApplicationController
   private
 
     def find_card
-      @card = Card.find(params[:id])
+      @card = current_user.cards.find(params[:id])
     end
 
     def card_params
