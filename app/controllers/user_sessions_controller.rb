@@ -2,12 +2,11 @@ class UserSessionsController < ApplicationController
   skip_before_action :require_login, except: [:destroy]
 
   def new
-    @user = User.new
   end
 
   def create
     if @user = login(login_params[:email], login_params[:password])
-      redirect_to(profile_path, notice: 'Login successful')
+      redirect_to(edit_profile_path(@user), notice: 'Login successful')
     else
       redirect_to(root_path, error: 'Error')
     end

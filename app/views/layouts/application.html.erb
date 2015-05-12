@@ -9,7 +9,7 @@
 <body>
   <div id="nav">
     <% if current_user %>
-      <%= link_to "Edit Profile", profile_path %>
+      <%= link_to "Edit Profile", edit_profile_path(current_user) %>
       <%= link_to "Logout", :logout, method: :post %>
     <% else %>
       <%= link_to "Register", new_user_path %> |
@@ -28,6 +28,8 @@
        <ul class="navigation-links">
         <li><%= link_to 'All Cards', cards_path %> </li>
         <li><a href="#">Добавьте карточку</a></li>
+        
+
       </ul>
     </header>
 

@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
+
   authenticates_with_sorcery!
+
   has_many :cards
+
+
 
   validates :password, length: { minimum: 10 }
   validates :password, confirmation: true

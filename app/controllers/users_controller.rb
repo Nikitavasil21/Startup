@@ -7,12 +7,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save!
-      auto_login(@user)
-      redirect_to(profile_path, notice: 'User was successfully created')
+    user = User.new(user_params)
+    if user.save!
+      auto_login(user)
+      redirect_to(edit_profile_path(user), notice: 'User was successfully created')
     else
-      redirect_to(profile_path, error: 'You must try again')
+      redirect_to(edit_profile_path(user), error: 'You must try again')
     end
   end
 
@@ -31,6 +31,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :password, :password_confirmation, :authentications_attributes)
     end
 end

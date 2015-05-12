@@ -1,4 +1,4 @@
-<%= simple_form_for :profile, method: :patch do |f| %>
+<%= simple_form_for :profile, method: :patch, url: profile_path do |f| %>
   <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>

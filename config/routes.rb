@@ -1,8 +1,6 @@
 Startup::Application.routes.draw do
-  
-  get 'profile' => 'profile#edit'
-  patch 'profile' => 'profile#update'
-  
+
+  resources :profile, only: [:edit, :update]  
 
   resources :user_sessions
   resources :users
