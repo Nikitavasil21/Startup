@@ -9,7 +9,7 @@
 <body>
   <div id="nav">
     <% if current_user %>
-      <%= link_to "Edit Profile", edit_profile_path %>
+      <%= link_to "Edit Profile", edit_profiles_path %>
       <%= link_to "Logout", :logout, method: :post %>
     <% else %>
       <%= link_to "Register", new_user_path %> |

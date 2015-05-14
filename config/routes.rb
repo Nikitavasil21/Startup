@@ -4,7 +4,7 @@ Startup::Application.routes.draw do
   get "oauth/callback" => "oauths#callback" 
   get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
-  resource :profile, only: [:edit, :update]  
+  resource :profiles, only: [:edit, :update]  
 
   resources :user_sessions
   resources :users

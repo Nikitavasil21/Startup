@@ -10,17 +10,13 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       auto_login(user)
-      redirect_to(edit_profile_path(user), notice: 'User was successfully created')
+      redirect_to(edit_profiles_path(user), notice: 'User was successfully created')
     else
-      redirect_to(edit_profile_path(user), error: 'You must try again')
+      redirect_to(edit_profiles_path(user), error: 'You must try again')
     end
   end
 
   private
-
-    def set_user
-      @user = User.find(params[:id])
-    end
 
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :authentications_attributes)
