@@ -1,4 +1,4 @@
-class ProfileController < ApplicationController
+class ProfilesController < ApplicationController
 
   def edit
   end
@@ -13,6 +13,6 @@ class ProfileController < ApplicationController
 
   private
     def user_params
-      params.require(:profile).permit(:email, :password, :password_confirmation)
+      params.require(:profile).permit(:email, :password)
     end
 end

@@ -8,19 +8,11 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    if user.save!
+    if user.save
       auto_login(user)
       redirect_to(edit_profile_path(user), notice: 'User was successfully created')
     else
       redirect_to(edit_profile_path(user), error: 'You must try again')
-    end
-  end
-
-  def update
-    if @user.update(user_params)
-      redirect_to(profile_path, notice: 'Profile updated')
-    else
-      redirect_to(profile_path, error: 'Error')
     end
   end
 

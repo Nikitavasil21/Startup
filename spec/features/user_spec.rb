@@ -12,7 +12,6 @@ describe "Check updating of user and card validations" do
   it "Check user profile updating" do
    fill_in :profile_email, with: "dodge@bk.ru"
    fill_in :profile_password, with: "1234567891"
-   fill_in :profile_password_confirmation, with: "1234567891"
    click_button "Save Profile"
    expect(page).to have_content("Update successfully")
   end
