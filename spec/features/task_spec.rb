@@ -1,5 +1,5 @@
 require "rails_helper"
-require "support/login_helper"
+
 
 describe "Check the verify of the form" do
 
