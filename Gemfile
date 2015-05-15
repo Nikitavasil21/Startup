@@ -13,6 +13,8 @@ gem 'rspec-rails'
 
 gem 'bootstrap-sass'
 
+gem 'paperclip'
+
 gem 'autoprefixer-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
