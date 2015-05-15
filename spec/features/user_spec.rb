@@ -1,21 +1,24 @@
 require "rails_helper"
-require "support/login_helper"
+
 
 describe "Check updating of user and card validations" do
   let! (:user) { FactoryGirl.create(:user) }
   let (:card) { FactoryGirl.create(:card) }
 
-  before (:each) do
-    login("dodge@bk.ru", "1234567890")
-  end
+  context "Check user updating" do
 
-  it "Check user profile updating" do
-   fill_in :profile_email, with: "dodge@bk.ru"
-   fill_in :profile_password, with: "1234567891"
-   click_button "Save Profile"
-   expect(page).to have_content("Update successfully")
+    before (:each) do
+      login("dodge@bk.ru", "1234567890")
+    end
+
+    it "Check user profile updating" do
+      fill_in :profile_email, with: "dodge@bk.ru"
+      fill_in :profile_password, with: "1234567891"
+      fill_in :profile_password_confirmation, with: "1234567891"
+      click_button "Save Profile"
+      expect(page).to have_content("Update successfully")
+    end
   end
-end
 
   context "Check user registration" do
 
@@ -45,3 +48,4 @@ end
       expect(page).to have_content("Нет карточек")
     end
   end
+end
