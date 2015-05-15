@@ -4,10 +4,10 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params)
+    if current_user.update_attributes(user_params)
       redirect_to(root_path, notice: "Update successfully")
     else
-      redirect_to(edit_profile_path, error: "Something went wrong")
+      redirect_to(edit_profiles_path, error: "Something went wrong")
     end
   end
 

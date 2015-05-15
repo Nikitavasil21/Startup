@@ -1,11 +1,15 @@
-<%= simple_form_for :profile, method: :patch do |f| %>
-  <div class="field">
+<%= simple_form_for :profile, method: :patch, url: profiles_path do |f| %>
+   <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
-     <%= f.password_field :password, value: :password %>
+   <%= f.label :password %><br />
+   <%= f.password_field :password, value: :password %>
+  </div>
+  <div class="field">
+   <%= f.label :password_confirmation %><br />
+   <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
     <%= f.submit %>
