@@ -1,6 +1,13 @@
 class CardsController < ApplicationController
   before_action :find_card, only: [:show, :edit, :update, :destroy]
+<<<<<<< HEAD
   before_action :require_login
+=======
+<<<<<<< HEAD
+  before_action :require_login
+=======
+>>>>>>> c8ac9ec5d6f1dbfd0b39e28955c3d7825e9b44ce
+>>>>>>> master
 
   def index
     @cards = current_user.cards.all
