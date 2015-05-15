@@ -10,6 +10,7 @@
         <%= @card.translated %>
         <%= label_tag  "Введите перевод" %>
         <%= text_field_tag :user_translation %>
+        <%= image_tag @card.picture.url(:medium) %>
         <%= hidden_field_tag :id, @card.id %>
         <%= submit_tag "Проверка" %>
     </p>
