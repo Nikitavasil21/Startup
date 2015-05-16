@@ -20,6 +20,6 @@ class UserSessionsController < ApplicationController
 
   private
    def login_params
-    params.permit(:email, :password)
+     params.permit(:email, :password, :password_confirmation)
   end
 end

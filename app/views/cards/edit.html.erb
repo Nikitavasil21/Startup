@@ -1,14 +1,1 @@
-<h1>Редактировать карточку</h1>
-<%= simple_form_for @card do |f| %>
-  <p>
-    <%= f.input :original, label: 'Оригинал' %>
-    <%= f.input :translated, label: 'Перевод' %>
-    <%= f.datetime_select :review_date,label:'Дата обновления' %>
-    
-  </p>
-  <p>
-    <%= f.button :submit, "Редактировать", class: "submit" %>
-  </p>
-<% end %>
-
-<%= link_to 'Назад', cards_path %>
+<%= render 'form', card: @card %>

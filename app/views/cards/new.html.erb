@@ -1,17 +1,1 @@
-<%= simple_form_for :card, url: cards_path do |f| %>
-  <h1>Создать новую карточку</h1>
-  <p> 
-    <%= f.input :original, label: 'Введите оригинал слова ' %><br>
-  </p>
-  <p>
-    <%= f.input :translated, label: 'Введите перевод слова' %>
-  </p>
-  <p>
-    <%= f.datetime_select :review_date %>
-  </p>
-  <p>
-    <%= f.button :submit, "Готово!" %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', cards_path %>
+<%= render 'form', card: @card %>
