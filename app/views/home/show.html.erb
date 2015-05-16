@@ -2,7 +2,7 @@
   <% if @card %>
     <p>
       <%= @card.original_text %>
-      <%= form_tag card_path, multipart: true, method: :put do %>
+      <%= form_tag card_path, method: :put do %>
       <%= label_tag :translated, "Введите перевод" %>
       <%= text_field_tag :translation %>
       <%= hidden_field_tag :review_date %>
