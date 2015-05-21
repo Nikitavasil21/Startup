@@ -4,6 +4,7 @@
     <%= f.input :translated %>
     <%= f.datetime_select :review_date %>
     <%= f.input :picture, as: :file %>
+    <%= f.association :deck, label: "Deck name" %>
   </p>
   <p>
     <%= f.button :submit, class: "submit" %>

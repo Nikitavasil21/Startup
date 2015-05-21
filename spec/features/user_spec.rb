@@ -41,7 +41,7 @@ describe "Check updating of user and card validations" do
 
     before (:each) do
       login("dodge@bk.ru","1234567890")
-      visit root_path
+      visit home_path
     end
 
     it "Check the user_id validation" do

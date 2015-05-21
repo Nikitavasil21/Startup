@@ -5,10 +5,11 @@ describe "Check the verify of the form" do
 
   let!(:card) { FactoryGirl.create (:card) }
   let!(:user) { FactoryGirl.create (:user) }
+  let!(:deck) { FactoryGirl.create (:deck) }
   before (:each) do
     login("dodge@bk.ru", "1234567890")
     card.update_attribute(:review_date, Date.today - 1.day)
-    visit root_path
+    click_link "Main"
   end
 
   it "Check the true translation of the card" do

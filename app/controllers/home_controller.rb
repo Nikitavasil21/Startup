@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
   def index
-    @card = Card.for_review.first
+    if current_user.current_deck.present?
+      @card = current_user.current_deck.cards.for_review.first
+    else
+      @card = current_user.cards.for_review.first
+    end
   end
 
   def review_card
