@@ -19,7 +19,7 @@ Startup::Application.routes.draw do
   put 'decks' => 'profiles#set_current_deck', :as => :set_current_deck
 
 
-  root :to => "user_sessions#new"
+  root to: "user_sessions#new"
   resources :cards
   put "review" => "home#review_card"
 end

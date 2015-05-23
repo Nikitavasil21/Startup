@@ -12,9 +12,9 @@ class ProfilesController < ApplicationController
   end
 
   def set_current_deck  
-    current_user.update_attributes(current_deck_id: params[:deck_id])
+    if current_user.update_attributes(current_deck_id: params[:deck_id])
       flash[:success] = "Current deck set!"
-    redirect_to decks_path
+      redirect_to decks_path
   end
 
 

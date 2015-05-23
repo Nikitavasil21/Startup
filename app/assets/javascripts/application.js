@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -12,5 +13,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require turbolinks
 //= require_tree .
+
+
+
+$(document).ready(function () {
+  $("#new_user").validate({
+    rules: {
+      "user[password]": {required: true, minlength: 10},
+      "user[password_confirmation]": {required: true, minlength: 10}
+    }});
+  });
