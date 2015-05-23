@@ -10,7 +10,7 @@ Rails.application.config.sorcery.configure do |config|
 
   config.twitter.key = ENV["config.twitter.key"]
   config.twitter.secret = ENV["config.twitter.secret"]
-  config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
+  config.twitter.callback_url = "https://safe-castle-7535.herokuapp.com/oauth/callback?provider=twitter"
   config.twitter.user_info_mapping = {:email => "screen_name"}
 
 
