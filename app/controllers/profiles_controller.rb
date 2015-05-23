@@ -15,6 +15,7 @@ class ProfilesController < ApplicationController
     if current_user.update_attributes(current_deck_id: params[:deck_id])
       flash[:success] = "Current deck set!"
       redirect_to decks_path
+    end
   end
 
 
