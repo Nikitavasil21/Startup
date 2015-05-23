@@ -4,12 +4,13 @@
   </p>
 </section>
 <body>
-  <% if current_user.current_deck.present? %>
+  <% if current_user %>
     <% current_user.current_deck.name %>
   <% else %>
     Deck is not set!
   <% end %>
   <% if @card %>
+    <% current_user.current_deck.name %>
     <p>
       <%= form_tag review_path, method: :put do %>
         <%= @card.translated %>

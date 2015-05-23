@@ -36,16 +36,4 @@ describe "Check updating of user and card validations" do
       expect(page).to have_content("User was successfully created")
     end
   end
-
-  context "Check user_Id validation" do
-
-    before (:each) do
-      login("dodge@bk.ru","1234567890")
-      visit home_path
-    end
-
-    it "Check the user_id validation" do
-      expect(page).to have_content("Нет карточек")
-    end
-  end
 end

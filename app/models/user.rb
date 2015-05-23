@@ -7,6 +7,23 @@ class User < ActiveRecord::Base
   has_many :decks
 
   belongs_to :current_deck, class_name: "Deck"
+  
+  validate :current_deck_belongs_to_decks, on: :set_current_deck
+
+  def current_deck_belongs_to_deck
+    if decks.include?(deck.find(current_deck_id))
+      errors.add(:current_deck, "Deck id and current deck id cant be different" ) 
+    end
+  end
+
+  def cards_for_review
+    if current_deck_id
+      current_deck.cards.for_review
+    else
+      cards.for_review
+    end
+  end
+
 
   has_many :cards, through: :decks
 
