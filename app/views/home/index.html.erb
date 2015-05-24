@@ -4,7 +4,7 @@
   </p>
 </section>
 <body>
-  <% if current_user %>
+  <% if current_user.current_deck %>
     <% current_user.current_deck.name %>
   <% else %>
     Deck is not set!
