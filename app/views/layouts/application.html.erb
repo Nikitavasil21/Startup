@@ -28,7 +28,7 @@
        <ul class="navigation-links">
         <li><%= link_to 'All Cards', cards_path %> </li>
         <li><%= link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter) %></li>
-        <li><a href="#">Добавьте карточку</a></li>
+        <li><%= link_to "Новая карточка", new_card_path %></li>
         <%= link_to "Add a deck", new_deck_path %>
         <li><%= link_to 'Decks', decks_path %></li>
         <li><%= link_to 'Main', home_path %></li>
