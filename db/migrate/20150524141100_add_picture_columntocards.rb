@@ -1,4 +1,4 @@
-class AddAvatarColumnsToUser < ActiveRecord::Migration
+class AddPictureColumntocards < ActiveRecord::Migration
   def self.up     
     change_table :cards do |t|  
       t.has_attached_file :picture     
@@ -9,4 +9,3 @@ class AddAvatarColumnsToUser < ActiveRecord::Migration
     drop_attached_file :cards, :picture   
   end 
 end
-

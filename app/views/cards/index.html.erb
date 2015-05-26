@@ -16,7 +16,9 @@
       <%= link_to 'Удалить' , card_path(card), method: :delete,
            data: { confirm: 'Are you sure?' } %>
       <%= link_to 'Редактировать', edit_card_path(card) %>
-
+    </div>
+    <div id="right">
+      <%= image_tag card.picture.url(:medium) %>
     </div>
   </div>
 <% end %>
