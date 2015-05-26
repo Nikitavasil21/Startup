@@ -4,6 +4,7 @@ require "rails_helper"
 describe "Check updating of user and card validations" do
   let! (:user) { FactoryGirl.create(:user) }
   let (:card) { FactoryGirl.create(:card) }
+  let!(:deck) { FactoryGirl.create (:deck) }
 
   context "Check user updating" do
 
